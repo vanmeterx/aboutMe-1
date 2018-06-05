@@ -5,7 +5,7 @@ body {
 header{
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 50%;
     text-align: center;
 }
 
@@ -14,8 +14,20 @@ h1{
     text-shadow: 3px 2px #2f1f89;
 }
 
+h3{
+  color: #2f1f89;
+  text-shadow: none;
+  transition: 500ms;
+}
+
+h3:hover{
+    color: #5dcc7c;
+    text-shadow: 3px 2px #2f1f89;
+    transition: 500ms;
+}
+
 section{
-    width: 75%;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
