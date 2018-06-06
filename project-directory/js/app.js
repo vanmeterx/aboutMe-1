@@ -77,8 +77,9 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert("Y'know what? I'm done with you... Child.");
     console.log('Error: you have been abandoned.');
 }
+
 question = "I'm thinking of a number between 1 and 10, what is it?";
-var randomNumber = Math.floor(Math.random()*11).toString();
+var randomNumber = Math.floor(Math.random()*10+1).toString();
 answer = prompt(question);
 var guess = 1;
 while (answer !== randomNumber){
@@ -86,15 +87,26 @@ while (answer !== randomNumber){
         console.log('Exitting loop.');
         break;
     } else {
-        answer = prompt(answer+"is wrong, try again.");
+        answer = prompt(answer+" is wrong, try again.");
         guess++;
         console.log(guess);
     }
+    if (guess === 5){
+        alert("That's enough, it was "+randomNumber+".");
+        break;
+    }
 }
+
+console.log(correct);
 if (answer !== null){
     if (guess === 1){
         alert('You got it on your first try!');
-    } else {
+        correct++;
+    } else if (guess >= 5){
+    }
+    else {
         alert('You got it in '+guess+' tries!');
+        correct++;
     }
 }
+console.log(correct);
