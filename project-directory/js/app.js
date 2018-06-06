@@ -87,7 +87,12 @@ while (answer !== randomNumber){
         console.log('Exitting loop.');
         break;
     } else {
-        answer = prompt(answer+" is wrong, try again.");
+        if (answer > randomNumber){
+            answer = prompt('Too high, guess again!');
+        } else if (answer < randomNumber){
+            answer = prompt('Too low, guess again!');
+        } else {
+        }
         guess++;
         console.log(guess);
     }
@@ -97,7 +102,6 @@ while (answer !== randomNumber){
     }
 }
 
-console.log(correct);
 if (answer !== null){
     if (guess === 1){
         alert('You got it on your first try!');
@@ -110,3 +114,16 @@ if (answer !== null){
     }
 }
 console.log(correct);
+
+var instruments = ['TROMBONE', 'EUPHONIUM', 'TRUMPET', 'CLARINET','SAXOPHONE', 'FRENCH HORN', 'TUBA'];
+console.log(instruments);
+question = "What is one instrument Nathan Cashman is proficient on?";
+answer = prompt(question);
+if (instruments.indexOf(answer.toUpperCase().trim()) >= 0){
+    alert("Yes, I am proficient on "+answer+"!");
+    correct++;
+} else {
+    alert("No, I am not proficient on "+answer+".");
+}
+
+alert("You answered "+correct+" correct out of a possible 7!")
