@@ -79,15 +79,15 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
 }
 
 question = "I'm thinking of a number between 1 and 10, what is it?";
-var randomNumber = Math.floor(Math.random()*10+1).toString();
+var randomNumber = Math.floor(Math.random()*10+1);
 answer = prompt(question);
 var guess = 1;
-while (answer !== randomNumber){
+while (Number(answer) !== randomNumber){
     if (answer === null){
         console.log('Exitting loop.');
         break;
     } else {
-        if (answer > randomNumber){
+        if (Number(answer) > randomNumber){
             answer = prompt('Too high, guess again!');
         } else if (answer < randomNumber){
             answer = prompt('Too low, guess again!');
@@ -115,15 +115,34 @@ if (answer !== null){
 }
 console.log(correct);
 
-var instruments = ['TROMBONE', 'EUPHONIUM', 'TRUMPET', 'CLARINET','SAXOPHONE', 'FRENCH HORN', 'TUBA'];
+var instruments = ['trombone', 'euphonium', 'trumpet', 'clarinet', 'saxophone', 'french horn', 'tuba'];
 console.log(instruments);
 question = "What is one instrument Nathan Cashman is proficient on?";
+guess = 1;
 answer = prompt(question);
-if (instruments.indexOf(answer.toUpperCase().trim()) >= 0){
-    alert("Yes, I am proficient on "+answer+"!");
-    correct++;
-} else {
-    alert("No, I am not proficient on "+answer+".");
+while (instruments.indexOf(answer.toLowerCase().trim()) < 0){
+    if (answer === null){
+        console.log('Exitting loop.');
+        break;
+    } else{ 
+    answer = prompt("I am not proficient on "+answer.toLowerCase().trim()+". Guess again!");
+    guess++;
+    } 
+    if (guess === 6){
+        break;
+    }
 }
 
-alert("You answered "+correct+" correct out of a possible 7!")
+if (answer !== null){
+    if (guess === 1){
+        alert('One guess is all you need! In fact, I play '+ instruments.join(', ' ));
+        correct++;
+    } else if (guess >= 6){
+        alert("I actually play "+ instruments.join(', ' ));
+    } else {
+        alert("You got it in "+guess+" tries! I play "+ instruments.join(', ' )+".");
+        correct++;
+    }
+}
+
+alert("You answered "+correct+" correct out of a possible 7!");
