@@ -1,8 +1,40 @@
 body {
     background: linear-gradient(135deg, #5dcc7c, #2f1f89);
+    margin: 0;
+}
+
+nav {
+    float: left;
+    height: 100%;
+    background: black;
+}
+
+.social{
+    list-style: none;
+    display: block;
+    width: 4%;
+    position: fixed;
+    margin: 0;
+    padding-top: 4%;
+    padding-left: 0;
+    height: 100%;
+    background: black;
+}
+
+.social li {
+    height: 25%;
+}
+
+a{
+    display: block;
+}
+
+img{
+    width: 100%;
 }
 
 header{
+    padding-top: 1%;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
