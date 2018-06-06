@@ -15,6 +15,8 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert("C'mon, at least try to do this.");
     console.log("Question 1: '" +question+"' was not answered!");
 }
+var el = document.getElementById('answer1');
+el.innerHTML = answer;
 
 question = 'Does Nathan Cashman play bass?';
 answer = prompt(question);
@@ -30,6 +32,8 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert('Dude, just humor me.');
     console.log("Question 2: '" +question+"' was not answered!");
 }
+el = document.getElementById('answer2');
+el.innerHTML = answer;
 
 question = 'Does Nathan Cashman live in Cedar Rapids?';
 answer = prompt(question);
@@ -45,6 +49,8 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert('Why are you even here?');
     console.log("Question 3: '" +question+"' was not answered!");
 }
+el = document.getElementById('answer3');
+el.innerHTML = answer;
 
 question = 'Does Nathan Cashman like anime?';
 answer = prompt(question);
@@ -60,6 +66,8 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert("Don't you have better things to do?");
     console.log("Question 4: '" +question+"' was not answered!");
 }
+el = document.getElementById('answer4');
+el.innerHTML = answer;
 
 question = 'Does Nathan Cashman live with his parents?';
 answer = prompt(question);
@@ -77,6 +85,8 @@ if (answer.toUpperCase().trim() === 'YES' || answer.toUpperCase().trim() === 'Y'
     alert("Y'know what? I'm done with you... Child.");
     console.log('Error: you have been abandoned.');
 }
+el = document.getElementById('answer5');
+el.innerHTML = answer;
 
 question = "I'm thinking of a number between 1 and 10, what is it?";
 var randomNumber = Math.floor(Math.random()*10+1);
@@ -114,6 +124,8 @@ if (answer !== null){
     }
 }
 console.log(correct);
+el = document.getElementById('answer6');
+el.innerHTML = answer;
 
 var instruments = ['trombone', 'euphonium', 'trumpet', 'clarinet', 'saxophone', 'french horn', 'tuba'];
 console.log(instruments);
@@ -144,5 +156,7 @@ if (answer !== null){
         correct++;
     }
 }
+el = document.getElementById('answer7');
+el.innerHTML = answer;
 
 alert("You answered "+correct+" correct out of a possible 7!");
