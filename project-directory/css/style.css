@@ -31,4 +31,11 @@ section{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 7px outset #2f1f89;
+    padding: 0 1%;
+}
+
+section h2{
+    color: #cc5dbd;
+    text-shadow: 3px 2px #2f1f89;
 }
