@@ -165,6 +165,8 @@ function guessingGame2(){
         alert('You got it in '+guess+' tries! I play '+ instruments.join(', ' )+'.');
         correct++;
       }
+    } else {
+      console.log(guess);
     }
   }
 
