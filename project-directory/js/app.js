@@ -101,23 +101,22 @@ function question5(){
 function guessingGame(){
   var question = 'I\'m thinking of a number between 1 and 10, what is it?';
   var randomNumber = Math.floor(Math.random()*10+1);
+  console.log(randomNumber);
   var answer = prompt(question);
-  var guess = 1;
-  while (Number(answer) !== randomNumber){
+  var guess = 0;
+  while (true){
     if (answer === null){
       console.log('Exitting loop.');
       break;
     } else if (isNaN(Number(answer))=== true){
       answer = prompt('That is not a number, try again.');
       guess++;
-    }
-    else {
+    } else {
       if (Number(answer) > randomNumber){
         answer = prompt('Too high, guess again!');
       } else if (answer < randomNumber){
         answer = prompt('Too low, guess again!');
-      } else {
-      }
+      } 
       guess++;
       console.log(guess);
     }
@@ -132,6 +131,7 @@ function guessingGame(){
         alert('You got it in '+guess+' tries!');
         correct++;
       }
+      break;
     }
   }
   console.log(correct);
@@ -143,13 +143,13 @@ function guessingGame2(){
   var instruments = ['trombone', 'euphonium', 'trumpet', 'clarinet', 'saxophone', 'french horn', 'tuba'];
   console.log(instruments);
   var question = 'What is one instrument Nathan Cashman is proficient on?';
-  var guess = 1;
+  var guess = 0;
   var answer = prompt(question);
-  while (instruments.indexOf(answer.toLowerCase().trim()) < 0){
+  while (true){
     if (answer === null){
       console.log('Exitting loop.');
       break;
-    } else{
+    } else if(instruments.indexOf(answer.toLowerCase().trim()) < 0){
       answer = prompt('I am not proficient on '+answer.toLowerCase().trim()+'. Guess again!');
       guess++;
     }
@@ -161,13 +161,13 @@ function guessingGame2(){
       if (guess === 1){
         alert('One guess is all you need! In fact, I play '+ instruments.join(', ' ));
         correct++;
+        break;
       } else {
         alert('You got it in '+guess+' tries! I play '+ instruments.join(', ' )+'.');
         correct++;
+        break;
       }
-    } else {
-      console.log(guess);
-    }
+    } 
   }
 
   var el = document.getElementById('answer7');
