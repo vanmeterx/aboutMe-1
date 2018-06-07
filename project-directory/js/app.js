@@ -143,7 +143,7 @@ function guessingGame2(){
   var instruments = ['trombone', 'euphonium', 'trumpet', 'clarinet', 'saxophone', 'french horn', 'tuba'];
   console.log(instruments);
   var question = 'What is one instrument Nathan Cashman is proficient on?';
-  var guess = 0;
+  var guess = 1;
   var answer = prompt(question);
   while (true){
     if (answer === null){
