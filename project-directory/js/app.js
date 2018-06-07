@@ -96,7 +96,11 @@ while (Number(answer) !== randomNumber){
     if (answer === null){
         console.log('Exitting loop.');
         break;
-    } else {
+    } else if (isNaN(Number(answer))=== true){
+        answer = prompt('That is not a number, try again.');
+        guess++;
+    }
+    else {
         if (Number(answer) > randomNumber){
             answer = prompt('Too high, guess again!');
         } else if (answer < randomNumber){
@@ -106,23 +110,21 @@ while (Number(answer) !== randomNumber){
         guess++;
         console.log(guess);
     }
-    if (guess === 5){
+    if (guess === 4 && Number(answer) !== randomNumber){
         alert("That's enough, it was "+randomNumber+".");
         break;
+    } else if (answer !== null && Number(answer) === randomNumber){
+        if (guess === 1){
+            alert('You got it on your first try!');
+            correct++;
+        } else {
+            alert('You got it in '+guess+' tries!');
+            correct++;
+        }
     }
 }
 
-if (answer !== null){
-    if (guess === 1){
-        alert('You got it on your first try!');
-        correct++;
-    } else if (guess >= 5){
-    }
-    else {
-        alert('You got it in '+guess+' tries!');
-        correct++;
-    }
-}
+
 console.log(correct);
 el = document.getElementById('answer6');
 el.innerHTML = answer;
@@ -140,22 +142,20 @@ while (instruments.indexOf(answer.toLowerCase().trim()) < 0){
     answer = prompt("I am not proficient on "+answer.toLowerCase().trim()+". Guess again!");
     guess++;
     } 
-    if (guess === 6){
+    if (guess === 6 && (instruments.indexOf(answer.toLowerCase().trim()) < 0)){
+        alert("I actually play "+ instruments.join(', ' )+".");
         break;
+    } else if (answer !== null && (instruments.indexOf(answer.toLowerCase().trim()) === 1)){
+        if (guess === 1){
+            alert('One guess is all you need! In fact, I play '+ instruments.join(', ' ));
+            correct++;
+        } else {
+            alert("You got it in "+guess+" tries! I play "+ instruments.join(', ' )+".");
+            correct++;
+        }
     }
 }
 
-if (answer !== null){
-    if (guess === 1){
-        alert('One guess is all you need! In fact, I play '+ instruments.join(', ' ));
-        correct++;
-    } else if (guess >= 6){
-        alert("I actually play "+ instruments.join(', ' ));
-    } else {
-        alert("You got it in "+guess+" tries! I play "+ instruments.join(', ' )+".");
-        correct++;
-    }
-}
 el = document.getElementById('answer7');
 el.innerHTML = answer;
 
